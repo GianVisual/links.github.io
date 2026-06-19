@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GianVisuals | Enlaces</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #main-container {
+            transition: background-color 650ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .carousel-item {
+            display: block;
+            position: absolute;
+            aspect-ratio: 0.6 / 1;
+            transition: transform 650ms cubic-bezier(0.4,0,0.2,1), 
+                        filter 650ms cubic-bezier(0.4,0,0.2,1), 
+                        opacity 650ms cubic-bezier(0.4,0,0.2,1), 
+                        left 650ms cubic-bezier(0.4,0,0.2,1), 
+                        bottom 650ms cubic-bezier(0.4,0,0.2,1), 
+                        height 650ms cubic-bezier(0.4,0,0.2,1);
+            will-change: transform, filter, opacity;
+            cursor: pointer;
+        }
+        .nav-btn {
+            transition: transform 150ms, background-color 150ms;
+        }
+        /* Transición suave para los textos */
+        .dynamic-text {
+            transition: opacity 300ms ease-in-out;
+        }
+        /* Sombra para que el texto blanco se lea sobre el blanco de "GIAN" */
+        .text-legible {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 14px rgba(0,0,0,0.30);
+        }
+    </style>
+</head>
+<body class="m-0 p-0">
+
+    <div id="main-container" class="relative w-full overflow-hidden font-['Inter',_sans-serif]">
+        <div class="relative w-full overflow-hidden h-[100vh]">
+            
+            <div class="absolute inset-0 pointer-events-none z-50 opacity-40"
+                 style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' opacity=\'0.08\'/%3E%3C/svg%3E'); background-size: 200px 200px; background-repeat: repeat;">
+            </div>
+
+            <div class="absolute inset-x-0 flex items-center justify-center pointer-events-none select-none z-[2]" style="top: 18%">
+                <h1 class="font-['Anton',_sans-serif] text-white font-black uppercase whitespace-nowrap opacity-100 leading-none tracking-[-0.02em]" 
+                    style="font-size: clamp(120px, 35vw, 450px);">
+                    GIAN
+                </h1>
+            </div>
+
+            <div class="absolute top-6 left-4 sm:left-8 z-[60] text-white text-xs font-semibold uppercase opacity-90 tracking-[0.18em] text-legible">
+                GIANVISUALS
+            </div>
+
+            <!-- Velo oscuro inferior: garantiza que el texto blanco se lea sobre cualquier fondo, incluido el blanco de "GIAN" -->
+            <div class="absolute inset-x-0 bottom-0 h-[45%] pointer-events-none z-[5]"
+                 style="background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0) 100%);"></div>
+
+            <!-- Cada personaje es un <a> real: funciona aunque el JS falle, y es rastreable por buscadores -->
+            <div id="carousel-track" class="absolute inset-0 z-[3]">
+                <a class="carousel-item"
+                   href="https://api.whatsapp.com/send/?phone=573209263077&text=Vi+tu+portafolio+y+me+interesa+trabajar+contigo&type=phone_number&app_absent=0"
+                   target="_blank" rel="noopener noreferrer" aria-label="Escribirme por WhatsApp">
+                    <img src="ws.png" alt="Personaje de WhatsApp" draggable="false" class="w-full h-full object-contain object-bottom pointer-events-none" />
+                </a>
+                <a class="carousel-item"
+                   href="https://instagram.com/Gian_visuals"
+                   target="_blank" rel="noopener noreferrer" aria-label="Ir a mi Instagram">
+                    <img src="ig.png" alt="Personaje de Instagram" draggable="false" class="w-full h-full object-contain object-bottom pointer-events-none" />
+                </a>
+                <a class="carousel-item"
+                   href="https://www.gianvisuals.com"
+                   target="_blank" rel="noopener noreferrer" aria-label="Ir a mi portafolio web">
+                    <img src="web.png" alt="Personaje del portafolio web" draggable="false" class="w-full h-full object-contain object-bottom pointer-events-none" />
+                </a>
+            </div>
+
+            <div class="absolute bottom-6 left-4 sm:bottom-20 sm:left-24 z-[60] max-w-[60%] sm:max-w-[320px]">
+                <div id="text-wrapper" class="dynamic-text opacity-100">
+                    <p id="info-title" class="font-bold uppercase mb-2 sm:mb-3 text-base sm:text-[22px] text-white opacity-95 tracking-[0.02em] text-legible">
+                        </p>
+                    <p id="info-desc" class="block text-white opacity-90 text-xs sm:text-sm leading-[1.5] sm:leading-[1.6] mb-4 sm:mb-5 text-legible">
+                        </p>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <button onclick="navigate('prev')" class="nav-btn flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white text-white bg-transparent hover:scale-105 hover:bg-white/10" aria-label="Anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                    </button>
+                    <button onclick="navigate('next')" class="nav-btn flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white text-white bg-transparent hover:scale-105 hover:bg-white/10" aria-label="Siguiente">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="absolute bottom-6 right-4 sm:bottom-20 sm:right-10 z-[60]">
+                <a id="cta-link" href="#" target="_blank" rel="noopener noreferrer" class="dynamic-text text-legible flex items-center gap-2 font-['Anton',_sans-serif] text-white uppercase no-underline opacity-95 hover:opacity-100 transition-opacity duration-200 font-normal leading-none tracking-[-0.02em]" style="font-size: clamp(18px, 3.5vw, 48px);">
+                    <span id="cta-text"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Array de datos con las 3 plataformas.
+        // Las imágenes de cada personaje ya NO se asignan aquí: viven directo en el <img src="">
+        // del HTML (ws.png / ig.png / web.png), para que funcionen incluso sin JavaScript.
+        const DATA = [
+            { 
+                id: 'whatsapp',
+                bg: '#6BBF7A', // Verde WhatsApp
+                title: 'WhatsApp',
+                desc: 'Hablemos de tu próximo proyecto. Escríbeme directamente y hagamos realidad tus ideas con impacto visual.',
+                btnText: 'Quiero contactarte',
+                link: 'https://api.whatsapp.com/send/?phone=573209263077&text=Vi+tu+portafolio+y+me+interesa+trabajar+contigo&type=phone_number&app_absent=0'
+            },
+            { 
+                id: 'instagram',
+                bg: '#F4845F', // Naranja
+                title: 'Instagram',
+                desc: 'Explora mi lado más creativo. Sígueme para ver detrás de cámaras, bocetos, procesos y mi día a día visual.',
+                btnText: 'Instagram',
+                link: 'https://instagram.com/Gian_visuals'
+            },
+            { 
+                id: 'web',
+                bg: '#6EB5FF', // Azul
+                title: 'Portafolio',
+                desc: 'Descubre mi ecosistema de trabajo. Proyectos en alta calidad, casos de estudio y todo mi recorrido profesional.',
+                btnText: 'Mi trabajo',
+                link: 'https://www.gianvisuals.com'
+            }
+        ];
+
+        let activeIndex = 0;
+        let isAnimating = false;
+
+        const container = document.getElementById('main-container');
+        const items = document.querySelectorAll('.carousel-item');
+        
+        // Elementos de texto dinámico
+        const infoTitle = document.getElementById('info-title');
+        const infoDesc = document.getElementById('info-desc');
+        const ctaText = document.getElementById('cta-text');
+        const ctaLink = document.getElementById('cta-link');
+        const dynamicTexts = document.querySelectorAll('.dynamic-text');
+
+        // Actualizar posiciones y estilos visuales
+        function updateCarousel() {
+            const isMobile = window.innerWidth < 640;
+            const currentData = DATA[activeIndex];
+            
+            // Cambiar el color de fondo
+            container.style.backgroundColor = currentData.bg;
+
+            // Efecto de desvanecimiento para el texto
+            dynamicTexts.forEach(el => el.style.opacity = '0');
+            
+            setTimeout(() => {
+                infoTitle.innerText = currentData.title;
+                infoDesc.innerText = currentData.desc;
+                ctaText.innerText = currentData.btnText;
+                ctaLink.href = currentData.link;
+                
+                dynamicTexts.forEach(el => el.style.opacity = '1');
+            }, 150); // Cambia el texto en el medio de la transición
+
+            // Matemáticas para 3 elementos (0, 1, 2)
+            const center = activeIndex;
+            const right = (activeIndex + 1) % 3;
+            const left = (activeIndex + 2) % 3;
+
+            items.forEach((item, index) => {
+                if (index === center) {
+                    item.style.transform = `translateX(-50%) scale(${isMobile ? 1.25 : 1.68})`;
+                    item.style.filter = 'blur(0px)';
+                    item.style.opacity = '1';
+                    item.style.zIndex = '20';
+                    item.style.left = '50%';
+                    item.style.height = isMobile ? '60%' : '92%';
+                    item.style.bottom = isMobile ? '22%' : '0';
+                } else if (index === left) {
+                    item.style.transform = 'translateX(-50%) scale(1)';
+                    item.style.filter = 'blur(2px)';
+                    item.style.opacity = '0.85';
+                    item.style.zIndex = '10';
+                    item.style.left = isMobile ? '15%' : '25%';
+                    item.style.height = isMobile ? '20%' : '35%';
+                    item.style.bottom = isMobile ? '28%' : '10%';
+                } else if (index === right) {
+                    item.style.transform = 'translateX(-50%) scale(1)';
+                    item.style.filter = 'blur(2px)';
+                    item.style.opacity = '0.85';
+                    item.style.zIndex = '10';
+                    item.style.left = isMobile ? '85%' : '75%';
+                    item.style.height = isMobile ? '20%' : '35%';
+                    item.style.bottom = isMobile ? '28%' : '10%';
+                }
+            });
+        }
+
+        // Función de navegación (mueve cuál personaje está al centro; no afecta sus links)
+        function navigate(direction) {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            if (direction === 'next') {
+                activeIndex = (activeIndex + 1) % 3;
+            } else {
+                activeIndex = (activeIndex + 2) % 3; // Equivalente a restar 1 en ciclo de 3
+            }
+
+            updateCarousel();
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 650);
+        }
+
+        // Listener de resize
+        window.addEventListener('resize', updateCarousel);
+        
+        // Carga inicial
+        updateCarousel();
+    </script>
+</body>
+</html>
