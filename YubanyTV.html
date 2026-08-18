@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuenta de Cobro N.° 1340 · Yubany Pajon — Gian Visuals</title>
+<meta name="theme-color" content="#060607" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg-main:#060607;--bg-card:#0c0e13;--acc:#0A5CFF;--acc-hi:#3D7DFF;--acc-soft:#6FA8FF;--gradient-primary:linear-gradient(135deg,#0A5CFF,#3D7DFF,#6FA8FF);--gradient-text:linear-gradient(90deg,#3D7DFF,#6FA8FF);--text-primary:#EDEBE6;--text-secondary:#A6A29A;--text-faint:#6E6A63;--border-color:rgba(10,92,255,.22);--glow-color:rgba(10,92,255,.55);--sans:'Inter',system-ui,sans-serif;--display:'Archivo',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;}
+*{box-sizing:border-box;}
+body{font-family:var(--sans);background-color:var(--bg-main);color:var(--text-primary);margin:0;padding:40px 20px;display:flex;flex-direction:column;align-items:center;min-height:100vh;}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.invoice-container{background-color:var(--bg-card);width:100%;max-width:850px;padding:60px;border-radius:24px;border:1px solid var(--border-color);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 40px rgba(10,92,255,.08);position:relative;overflow:hidden;}
+.invoice-container::before{content:'';position:absolute;top:-120px;right:-120px;width:340px;height:340px;background:var(--gradient-primary);filter:blur(110px);opacity:.18;z-index:0;}
+.invoice-container>*{position:relative;z-index:1;}
+header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:50px;border-bottom:1px solid rgba(237,235,230,.07);padding-bottom:30px;gap:20px;}
+.brand-zone{display:flex;align-items:center;gap:15px;}
+.logo-box{width:48px;height:48px;background:var(--gradient-primary);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:22px;color:#fff;box-shadow:0 0 18px var(--glow-color);}
+.brand-name{font-family:var(--display);font-size:20px;font-weight:800;letter-spacing:-.5px;color:var(--text-primary);text-decoration:none;line-height:1.1;}
+.brand-name small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;font-weight:500;color:var(--text-secondary);margin-top:3px;}
+.invoice-title-box{text-align:right;}
+.invoice-title-box .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--text-secondary);margin:0;text-transform:uppercase;}
+.gradient-text{background:var(--gradient-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-family:var(--display);font-weight:900;}
+.invoice-title-box .num{font-size:34px;line-height:1.1;margin:2px 0;}
+.invoice-title-box .fecha{font-size:13px;margin-top:6px;color:var(--text-secondary);}
+h2.section-label{font-family:var(--mono);font-size:11px;color:var(--acc-soft);text-transform:uppercase;letter-spacing:.18em;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+h2.section-label::after{content:'';height:1px;flex-grow:1;background:rgba(10,92,255,.22);}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px;}
+.info-block p{margin:5px 0;font-size:14px;color:var(--text-secondary);}
+.info-block strong{color:var(--text-primary);font-weight:600;}
+.table-glass{background:rgba(255,255,255,.02);border-radius:16px;padding:6px;border:1px solid rgba(237,235,230,.06);margin-bottom:30px;}
+table{width:100%;border-collapse:collapse;}
+th{text-align:left;padding:15px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--acc-soft);text-transform:uppercase;}
+td{padding:20px 15px;font-size:14px;border-top:1px solid rgba(237,235,230,.05);color:var(--text-secondary);}
+td.concepto{color:var(--text-primary);line-height:1.6;}
+td.valor{text-align:right;font-weight:700;color:var(--text-primary);font-family:var(--mono);white-space:nowrap;}
+.tax-disclaimer{background:rgba(10,92,255,.08);border:1px solid var(--border-color);padding:20px;border-radius:12px;font-size:12.5px;color:var(--text-secondary);margin-bottom:40px;line-height:1.6;}
+.tax-disclaimer strong{color:var(--text-primary);}
+.total-container{text-align:right;margin:40px 0;}
+.total-container .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--text-secondary);margin-bottom:8px;text-transform:uppercase;}
+.total-price{font-size:58px;line-height:1;margin-bottom:10px;font-family:var(--display);}
+.total-container .words{font-size:13px;color:var(--text-secondary);font-style:italic;}
+.legal-note{text-align:center;font-size:11px;color:var(--text-faint);margin-bottom:40px;font-style:italic;}
+.payment-card{background:rgba(10,92,255,.08);border:1px solid var(--border-color);padding:26px;border-radius:16px;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.payment-card .ptitle{color:var(--text-primary);font-weight:700;font-size:14px;margin:0 0 12px;}
+.payment-card p{margin:5px 0;font-size:13.5px;color:var(--text-secondary);}
+.payment-card .num{font-family:var(--mono);color:var(--text-primary);font-weight:600;letter-spacing:.03em;}
+.payment-card .col-2{border-left:1px solid rgba(237,235,230,.07);padding-left:24px;}
+.signature-area{margin-top:60px;border-top:1px solid rgba(237,235,230,.12);padding-top:20px;width:260px;}
+.signature-area .thanks{font-size:14px;margin:0 0 6px;color:var(--text-secondary);}
+.signature-area .name{font-family:var(--display);font-weight:800;color:var(--text-primary);font-size:18px;margin:0;}
+.signature-area .cc{font-size:13px;color:var(--text-secondary);margin:4px 0 0;}
+.btn-download{margin-top:40px;padding:18px 46px;font-family:var(--display);font-weight:700;letter-spacing:.02em;color:#fff;background:var(--gradient-primary);border:none;border-radius:50px;cursor:pointer;box-shadow:0 0 34px var(--glow-color);transition:.3s;font-size:15px;}
+.btn-download:hover{transform:scale(1.04);box-shadow:0 0 54px var(--glow-color);}
+@media (max-width:640px){body{padding:20px 12px;}.invoice-container{padding:34px 24px;}header{flex-direction:column;}.invoice-title-box{text-align:left;}.info-grid{grid-template-columns:1fr;gap:26px;}.payment-card{grid-template-columns:1fr;}.payment-card .col-2{border-left:none;padding-left:0;border-top:1px solid rgba(237,235,230,.07);padding-top:16px;}.total-price{font-size:46px;}}
+@media print{@page{margin:1.2cm;}body{background:#fff !important;padding:0;}body::after{display:none;}
+.invoice-container{background:#fff !important;color:#000 !important;box-shadow:none !important;border:none !important;padding:0;max-width:100%;}
+.invoice-container::before{display:none;}
+.gradient-text,.total-price{background:none !important;-webkit-text-fill-color:#0A5CFF !important;color:#0A5CFF !important;}
+.logo-box{background:#0A5CFF !important;box-shadow:none !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.tax-disclaimer,.payment-card,.table-glass{background:#f6f8ff !important;border:1px solid #dfe6ff !important;color:#000 !important;}
+p,strong,td,th,h2,.brand-name,.info-block strong,.signature-area .name{color:#000 !important;}
+.section-label{color:#0A5CFF !important;}h2.section-label::after{background:#e5e5e5;}.btn-download{display:none;}}
+</style></head><body>
+<div class="invoice-container">
+<header>
+<div class="brand-zone"><div class="logo-box">G</div>
+<a href="https://gianvisuals.com" target="_blank" class="brand-name">GIAN VISUALS<small>PARTNER CREATIVO 360°</small></a></div>
+<div class="invoice-title-box"><p class="kicker">Cuenta de Cobro</p>
+<div class="gradient-text num">N.° 1340</div>
+<p class="fecha">Expedición: 17 de agosto de 2026</p></div>
+</header>
+<div class="info-grid">
+<div class="info-block"><h2 class="section-label">Proveedor</h2>
+<p><strong>Gian Visuals</strong></p><p>C.C. 1.055.046.158</p><p>Contacto@gianvisuals.com</p><p>Bogotá D.C., Colombia</p></div>
+<div class="info-block"><h2 class="section-label">Cliente</h2>
+<p><strong>Yubany Pajon</strong></p><p>Bogotá D.C., Colombia</p></div>
+</div>
+<h2 class="section-label">Descripción del servicio</h2>
+<div class="table-glass"><table><thead><tr><th>Concepto</th><th style="text-align:right;">Valor (COP)</th></tr></thead>
+<tbody><tr><td class="concepto">Filmación y Producción de 2 shorts audiovisuales</td><td class="valor">$0</td></tr><tr><td class="concepto">Diseño estatico Grafico de conceptos utiles y apoyos visuales para la marca</td><td class="valor">$0</td></tr><tr><td class="concepto">Post-produccion de pieza audiovisual sobre "Mis servicios"</td><td class="valor">$0</td></tr><tr><td class="concepto">Post-Produccion de Video about me Yubany Pajon</td><td class="valor">$0</td></tr><tr><td class="concepto">Creación de Video Loop para TV</td><td class="valor">$499.900</td></tr></tbody></table></div>
+<div class="tax-disclaimer"><strong>Información tributaria:</strong><br>El prestador del servicio no es responsable de IVA según normativa vigente. El valor cobrado no incluye impuestos adicionales. No aplica retención en la fuente para este servicio.</div>
+<div class="total-container"><p class="lbl">Total a pagar (COP)</p>
+<div class="total-price gradient-text">$499.900</div>
+<p class="words">Son: CUATROCIENTOS NOVENTA Y NUEVE MIL NOVECIENTOS PESOS M/CTE.</p></div>
+<p class="legal-note">"El valor descrito corresponde a servicios efectivamente prestados, conforme a lo acordado entre las partes."</p>
+<h2 class="section-label">Forma de Pago</h2>
+<div class="payment-card">
+<div><p class="ptitle">Transferencia Bancaria</p>
+<p>Banco: <strong style="color:var(--text-primary);">Falabella/Llave Bre-b</strong></p>
+<p>Cuenta: Ahorros</p><p>N°: <span class="num">Gianpaolmh@gmail.com</span></p></div>
+<div class="col-2"><p class="ptitle">Billeteras Digitales</p>
+<p>Nequi / Daviplata / Bre-B</p><p class="num">320 926 3077</p></div>
+</div>
+<div class="signature-area"><p class="thanks">Atentamente,</p>
+<p class="name">Gian Visuals</p><p class="cc">C.C. 1.055.046.158</p></div>
+</div>
+<button class="btn-download" onclick="window.print()">DESCARGAR CUENTA EN PDF</button>
+</body></html>
